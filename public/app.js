@@ -13,6 +13,7 @@ const makeRequest = function(url, callback) {
   request.send();
 }
 
+// return data
 const requestComplete = function() {
   if(this.status !== 200) return;
   const jsonString = this.responseText;
@@ -20,7 +21,16 @@ const requestComplete = function() {
   populateList(beers);
 }
 
+// populate list
+const populateList = function(beers){
+  const ul = document.getElementById("beers-list");
 
+  beers.forEach(function(beer){
+    const li = document.createElement("li");
+    li.innerText = beer.name;
+    ul.appendChild(li);
+  })
+}
 
 
 document.addEventListener('DOMContentLoaded', app);
