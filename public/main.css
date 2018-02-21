@@ -19,3 +19,13 @@ body {
 li {
   list-style: none;
 }
+
+.beer_img {
+  width: 10px;
+  height: 30px;
+  padding-left: 8px;
+}
+
+.ingredients_text {
+  font-size: 70%;
+}

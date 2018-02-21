@@ -27,8 +27,21 @@ const populateList = function(beers){
 
   beers.forEach(function(beer){
     const li = document.createElement("li");
+    const beer_img = document.createElement("img");
+    const yeast = document.createElement("p");
+
     li.innerText = beer.name;
     ul.appendChild(li);
+
+    beer_img.className = "beer_img";
+    beer_img.src = beer.image_url;
+    li.appendChild(beer_img);
+
+    yeast.className = "ingredients_text";
+    yeast.innerText = `Yeast: ${beer.ingredients.yeast}`;
+    li.appendChild(yeast);
+    // console.log(yeast);
+
   })
 }
 
