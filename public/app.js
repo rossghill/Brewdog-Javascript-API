@@ -28,6 +28,8 @@ const populateList = function(beers){
   beers.forEach(function(beer){
     const li = document.createElement("li");
     const beer_img = document.createElement("img");
+    const malts = document.createElement("p");
+    const hops = document.createElement("p");
     const yeast = document.createElement("p");
 
     li.innerText = beer.name;
@@ -36,6 +38,27 @@ const populateList = function(beers){
     beer_img.className = "beer_img";
     beer_img.src = beer.image_url;
     li.appendChild(beer_img);
+
+    // malts.className = "ingredients_text";
+    // const maltNamesArray = [];
+    // beers.forEach(function(malt){
+    //   maltNamesArray.push(beer.ingredients.malt.name);
+    // });
+    // malts.innerText = maltNamesArray;
+    // li.appendChild(malts);
+    malts.className = "ingredients_text";
+    maltNamesArray = [];
+    maltsObject = beer.ingredients.malt;
+    maltsObject.forEach(function(malt){
+      maltNamesArray.push(malt.name);
+    })
+
+
+    console.log(maltNamesArray);
+    // console.log(maltsObject[0]);
+    // malts.innerText =
+
+    li.appendChild(malts);
 
     yeast.className = "ingredients_text";
     yeast.innerText = `Yeast: ${beer.ingredients.yeast}`;
