@@ -1,4 +1,21 @@
+body {
+  text-align: center;
+}
+
 #logo {
   width: 20%;
   height:20%;
+  padding-left: 35px;
+}
+
+#beers-list li:nth-child(odd) {
+  color: #31698a;
+}
+
+#beers-list li:nth-child(even) {
+  color: #3ac3b9;
+}
+
+li {
+  list-style: none;
 }
